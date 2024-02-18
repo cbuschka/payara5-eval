@@ -3,8 +3,11 @@ PROJECT_DIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 run:	build
 	@cd ${PROJECT_DIR}
 	docker run --init -m 8g --name payara5-server --rm -ti \
-		-p 4848:4848 -p 8080:8080 -p 8181:8181 \
-		-e PAYARA_ADMIN_PASSWORD=asdfasdf \
+		-p 4848:4848 \
+		-p 8080:8080 \
+		-p 8181:8181 \
+		-e ADMIN_USER=admin \
+		-e ADMIN_PASSWORD=asdfasdf \
 		payara5:local
 
 build-ear:
