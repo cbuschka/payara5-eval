@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<glassfish-ejb-jar>
+    <enterprise-beans>
+        <ejb>
+            <ejb-name>GreeterEJB</ejb-name>
+            <jndi-name>GreeterEJB</jndi-name>
+        </ejb>
+    </enterprise-beans>
+</glassfish-ejb-jar>

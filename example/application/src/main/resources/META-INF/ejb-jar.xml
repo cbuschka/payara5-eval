@@ -1,0 +1,30 @@
+﻿<?xml version="1.0"?>
+<ejb-jar xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <description>example-application</description>
+    <enterprise-beans>
+        <session>
+            <ejb-name>GreeterEJB</ejb-name>
+            <local-home>com.github.cbuschka.payara5_eval.example_application.GreeterEJBLocalHome</local-home>
+            <local>com.github.cbuschka.payara5_eval.example_application.GreeterEJBLocalObject</local>
+            <home>com.github.cbuschka.payara5_eval.example_application.GreeterEJBHome</home>
+            <remote>com.github.cbuschka.payara5_eval.example_application.GreeterEJBObject</remote>
+            <ejb-class>com.github.cbuschka.payara5_eval.example_application.GreeterSessionBean</ejb-class>
+            <session-type>Stateless</session-type>
+            <transaction-type>Bean</transaction-type>
+        </session>
+    </enterprise-beans>
+    <assembly-descriptor>
+        <security-role>
+            <role-name>admin</role-name>
+        </security-role>
+        <container-transaction>
+            <method>
+                <ejb-name>GreeterEJB</ejb-name>
+                <method-name>getMessage</method-name>
+                <method-params>
+                </method-params>
+            </method>
+            <trans-attribute>Required</trans-attribute>
+        </container-transaction>
+    </assembly-descriptor>
+</ejb-jar>
